@@ -9,13 +9,10 @@ def text_statistics(file_path):
         with open(file_path, 'r', encoding='utf-8') as file:
             text = file.read()
 
-        # Count characters (including spaces)
         char_count = len(text)
 
-        # Count words (split by whitespace)
         word_count = len(text.split())
 
-        # Count sentences (ends with '.', '!', or '?')
         sentence_count = len(re.findall(r'[.!?]', text))
 
         return char_count, word_count, sentence_count
@@ -81,23 +78,6 @@ configDict = {
     "stopAtXWord": config['Options']['stopAtXWord'],
     "stopAtXSentance": config['Options']['stopAtXSentance']
 }
-"""
-fileName = config['Options']['fileName']
-destLang = config['Options']['destLang']
-outMethod = config['Options']['outMethod']
-stopAtXSymbol = config['Options']['stopAtXSymbol']
-stopAtXWord = config['Options']['stopAtXWord']
-stopAtXSentance = config['Options']['stopAtXSentance']
-"""
-
-"""
-print(configDict["Name"])
-print(configDict['Dest'])
-print(configDict['outMethod'])
-print(configDict['stopAtXSymbol'])
-print(configDict['stopAtXWord'])
-print(configDict['stopAtXSentance'])
-"""
 
 char_count, word_count, sentence_count = text_statistics(configDict["Name"])
 
@@ -110,7 +90,6 @@ print(f"Кількість речень: {sentence_count}")
 txt = process_file(configDict)
 print(txt)
 print("LangDetectNext")
-# pdb.set_trace()  # this will let you poke around... try "p x"
 langDetectName = LangDetect(txt, "lang")
 langDetectConf = LangDetect(txt, "confidence")
 

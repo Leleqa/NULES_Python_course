@@ -65,12 +65,10 @@ def CodeLang(code: str):
 
 def translateTable(text=None, out="screen"):
     translator = Translator()
-    # Створюємо заголовок таблиці
     if text:
         table_header = f"{'Language':<30}{'Code':<10}{'Translated Text':<50}"
     else:
         table_header = f"{'Language':<30}{'Code':<10}"
-    # Записуємо рядки для кожної мови
     table_rows = []
     for code, language in LANGUAGES.items():
         if text:
@@ -82,10 +80,8 @@ def translateTable(text=None, out="screen"):
         else:
             row = f"{language:<30}{code:<10}"
         table_rows.append(row)
-    # Формуємо таблицю
     table = "\n".join([table_header] + table_rows)
 
-    # Виводимо на екран або в файл
     if out == "screen":
         print(table)
         return 'Ok'
