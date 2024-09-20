@@ -41,7 +41,7 @@ def process_file(config):
                     print("Досягнута максимальна кількість символів.")
                     break
                 if word_count > int(config['stopAtXWord']):
-                    print("Досягнута максимальна кількість рядків.")
+                    print("Досягнута максимальна кількість cлів.")
                     break
                 if sentence_count > int(config['stopAtXSentance']):
                     print("Досягнута максимальна кількість речень.")
@@ -81,15 +81,14 @@ configDict = {
 
 char_count, word_count, sentence_count = text_statistics(configDict["Name"])
 
-print(f"Назва файлу: {configDict["Name"]}")
-print(f"Розмір файлу: {os.path.getsize(configDict['Name'])} біт")
+print(f"Назва файлу: {configDict['Name']}")
+print(f"Розмір файлу: {os.path.getsize(configDict['Name'])} байт")
 print(f"Кількість символів: {char_count}")
 print(f"Кількість слів: {word_count}")
 print(f"Кількість речень: {sentence_count}")
 
 txt = process_file(configDict)
 print(txt)
-print("LangDetectNext")
 langDetectName = LangDetect(txt, "lang")
 langDetectConf = LangDetect(txt, "confidence")
 

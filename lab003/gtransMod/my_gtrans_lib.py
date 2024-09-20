@@ -63,7 +63,7 @@ def CodeLang(code: str):
             return iso
 
 
-def translateTable(text=None, out="screen"):
+def LanguageList(text=None, out="screen"):
     translator = Translator()
     if text:
         table_header = f"{'Language':<30}{'Code':<10}{'Translated Text':<50}"

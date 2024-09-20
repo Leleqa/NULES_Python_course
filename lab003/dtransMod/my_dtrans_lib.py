@@ -84,7 +84,7 @@ def CodeLang(code: str):
             return iso
 
 
-def translateTable(text=None, out="screen"):
+def LanguageList(text=None, out="screen"):
     translator = GoogleTranslator(source='auto', target='en')
     supported_languages = translator.get_supported_languages(as_dict=True)
 
