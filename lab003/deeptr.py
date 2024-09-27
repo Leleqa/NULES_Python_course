@@ -1,6 +1,6 @@
 # import gtransMod as mgt
 # from googletrans import LANGUAGES, Translator
-from dtransMod import LangDetect, TranSlate, CodeLang, translateTable
+from dtransMod import LangDetect, TranSlate, CodeLang, LanguageList
 
 
 print("Введіть текст для перекладу:")
@@ -27,5 +27,5 @@ print(f"The language name/code is '{CodeLang(lang)}'")
 lang = input("Enter another language name or code: ")
 print(f"The language name/code is '{CodeLang(lang)}'")
 
-result = translateTable("Hello, world!", out="screen")
+result = LanguageList("Hello, world!", out="screen")
 print(result)

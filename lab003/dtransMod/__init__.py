@@ -1,5 +1,5 @@
 # __init__.py
-from .my_dtrans_lib import LangDetect, TranSlate, CodeLang, translateTable
+from .my_dtrans_lib import LangDetect, TranSlate, CodeLang, LanguageList
 import pandas as pd
 from deep_translator import GoogleTranslator
 # from langdetect import detect, DetectorFactory

@@ -1,5 +1,5 @@
 # __init__.py
-from .my_gtrans_lib import LangDetect, TranSlate, CodeLang, translateTable
+from .my_gtrans_lib import LangDetect, TranSlate, CodeLang, LanguageList
 from googletrans import LANGUAGES, Translator
 import pandas as pd
 NAME = "Text translation"
