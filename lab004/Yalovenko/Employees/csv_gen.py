@@ -56,7 +56,7 @@ def fill_csv(data: dict, numRecords: int = 2000):
 fake = Faker(locale='uk_UA')
 
 data = init_csv_data()
-fill_csv(data)
+fill_csv(data, 10000)
 df = pd.DataFrame(data)
 
 df.to_csv('output.csv', index=False)
