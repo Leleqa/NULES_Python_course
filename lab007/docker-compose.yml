@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  postgres-db:
+    image: postgres:latest
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: myuser        # Задайте користувача
+      POSTGRES_PASSWORD: mypassword # Задайте пароль
+      POSTGRES_DB: mydatabase       # Назва бази даних
+    ports:
+      - "5432:5432"                 # Прокидання порту для підключення до СУБД
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data # Прокидання папки для зберігання даних
+
