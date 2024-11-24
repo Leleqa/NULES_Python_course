@@ -5,16 +5,13 @@ from django.core.validators import RegexValidator
 import uuid
 
 # Create your models here.
-numeric_validator = RegexValidator(r'^\d+$', 'Only numeric values are allowed.')
+numeric_validator = RegexValidator(
+    regex=r'^\+380 \(\d{2}\) \d{3}-\d{4}$',
+    message="Введіть номер телефону у форматі: +380 (67) 123-4567",
+    code='invalid_phone_number'
+)
 
-class Todo(models.Model):
-    title = models.CharField(max_length=200)
-    description = models.TextField()
-    due_date = models.DateField()
-    completed = models.BooleanField(default=False)
 
-    def __str__(self):
-        return self.title
 
 class Renters(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
