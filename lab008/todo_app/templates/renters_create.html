@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="todo_create">
-    <form action="{% url 'todo_create' %}" method="POST" autocomplete="off" >
+<div class="renters_create">
+    <form action="{% url 'renters_create' %}" method="POST" autocomplete="off" >
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Save</button>

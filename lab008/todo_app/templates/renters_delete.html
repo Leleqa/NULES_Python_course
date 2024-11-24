@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Видалити фірму</h2>
+  <p>Ви дійсно хочете видалити фірму "{{ renters.FirmName }}"?</p>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Yes</button>
+    <button type="button"><a href="{% url 'renters_list' %}">No</a></button>
+  </form>
+{% endblock %}
